@@ -1,17 +1,10 @@
-const ExpressInterface = require("../interfaces/web/express_interface");
-const HapiInterface = require("../interfaces/web/hapi_interface");
-const WebServer = require("../interfaces/web/web_interface")
+const {ExpressInterface, HapiInterface, WebServer} = require("../interfaces/web")
 
-//new WebServer({
-  //interface: new ExpressInterface({
-    //instance: require("express"),
-    //router: require("./routes")
-  //})
-//})
- 
+/* TODO:
+ * Modificar el sistema de rutas para que funcione
+   independientemente del framework web elegido. */
+
 new WebServer({
   interface: new HapiInterface({
-    instance: require("hapi"),
-    router: require("./routes")
-  })
+    instance: require("hapi"), router: require("./routes") }) 
 })
